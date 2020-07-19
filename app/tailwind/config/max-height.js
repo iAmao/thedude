@@ -16,4 +16,6 @@
 export default {
   'full': '100%',
   'screen': '100vh',
+  '80': '80px',
+  '30': '30px'
 };

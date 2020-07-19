@@ -16,5 +16,8 @@ export default {
   'tight': 1.25,
   'normal': 1.5,
   'loose': 2,
-  'btn': '38px'
+  'sm-btn': '30px',
+  'o-sm-btn': '28px',
+  'btn': '38px',
+  'o-btn': '36px'
 };

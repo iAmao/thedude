@@ -17,8 +17,7 @@
 |
 */
 
- export default {
-  'sans': [
+const sans = [
     'system-ui',
     'BlinkMacSystemFont',
     '-apple-system',
@@ -30,7 +29,17 @@
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    'sans-serif',
+    'sans-serif'
+]
+
+ export default {
+  'sans': [
+    'Nunito',
+    ...sans
+  ],
+  'sans-comfortaa': [
+      'Comfortaa',
+       ...sans
   ],
   'serif': [
     'Constantia',

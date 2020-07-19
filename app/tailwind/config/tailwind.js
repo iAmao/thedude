@@ -1,5 +1,3 @@
-import container from 'tailwindcss/plugins/container';
-
 import colors from './colors';
 import screens from './screens';
 import fonts from './fonts';
@@ -27,6 +25,7 @@ import zIndex from './z-index';
 import opacity from './opacity';
 import svgFill from './svg-fill';
 import svgStroke from './svg-stroke';
+import scale from './scale'
 
 export default {
   colors,
@@ -56,6 +55,7 @@ export default {
   opacity,
   svgFill,
   svgStroke,
+  theme: { scale },
 
   /*
   |-----------------------------------------------------------------------------
@@ -145,10 +145,6 @@ export default {
   */
 
   plugins: [
-    container({
-      // center: true,
-      // padding: '1rem',
-    })
   ],
 
   /*

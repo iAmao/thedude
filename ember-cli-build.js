@@ -1,10 +1,42 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const isProduction = EmberApp.env() === 'production';
+
+// Remove unused CSS rules
+const purgeCSS = {
+  module: require('@fullhuman/postcss-purgecss'),
+  options: {
+    content: [
+      './app/index.html',
+      './app/templates/**/*.hbs',
+      './app/pods/components/**/template.hbs'
+    ],
+    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
+  }
+}
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
-    // Add options here
+    postcssOptions: {
+      compile: {
+        plugins: [
+          {
+            module: require('postcss-import'),
+            options: {
+              path: ['node_modules']
+            }
+          },
+          require('tailwindcss')('./app/tailwind/config.js'),
+          ...isProduction ? [purgeCSS] : []
+        ]
+      }
+    },
+    svg: {
+      paths: [
+        'app/svgs'
+      ]
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
