@@ -1,0 +1,33 @@
+<div class="z-1">
+	<nav class="justify-between md:justify-center h-16 md:h-screen flex md:grid grid-rows-3 shadow-xs md:shadow-md w-screen {{if @open 'md:w-56' 'md:w-20'}}">
+		<div class="md:w-20 py-0 md:py-6 px-4 md:px-0 flex justify-center items-center md:items-start">
+			<img src="../images/logo.svg" class="w-8 md:w-12 h-8 md:h-12 rounded-full" />
+			<span class="inline-block md:hidden flex items-center">&nbsp;&nbsp;<h1 class="font-fredoka text-base">TheDude</h1></span>
+		</div>
+		<div class="md:w-20 hidden md:flex items-center overflow-hidden">
+			<ul class="p-0 m-0">
+				<li class="block bg-blue-pr-2 border-l-4 border-blue-pr">
+					<Button
+						@size="xs-0p"
+						@class="w-16 md:w-20 h-12 md:h-16"
+						@route="app.expense"
+						@color="transparent">
+						{{inline-svg "expenses" class="w-4 md:w-8 h-4 md:h-8 stroke-blue-pr fill-blue-pr"}}
+					</Button>
+				</li>
+			</ul>
+		</div>
+		<div class="md:w-20 hidden md:flex justify-center items-end py-6 overflow-hidden">
+			<Button
+				@size="xs-0p"
+				@route="signin"
+				@class="w-12 h-12"
+				@color="transparent">
+				{{inline-svg "logout" class="w-10 h-10"}}
+			</Button>
+		</div>
+		<div class="flex md:hidden px-4 items-center">
+			<Hamburger />
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,11 @@
+{
+	"name": "core-ui",
+	"keywords": [
+		"ember-addon"
+	],
+	"dependencies": {
+		"ember-cli-babel": "*",
+		"ember-cli-typescript": "*",
+		"ember-cli-htmlbars": "*"
+	}
+}

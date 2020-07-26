@@ -1,0 +1,1 @@
+export { default } from 'client/components/x-input/component';

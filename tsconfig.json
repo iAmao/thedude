@@ -25,16 +25,44 @@
         "tests/*"
       ],
       "client/*": [
-        "app/*"
+        "app/*",
+        "lib/components/app/*",
+        "lib/core-ui/app/*"
       ],
       "*": [
         "types/*"
+      ],
+      "components": [
+        "lib/components/addon"
+      ],
+      "components/*": [
+        "lib/components/addon/*"
+      ],
+      "components/test-support": [
+        "lib/components/addon-test-support"
+      ],
+      "components/test-support/*": [
+        "lib/components/addon-test-support/*"
+      ],
+      "core-ui": [
+        "lib/core-ui/addon"
+      ],
+      "core-ui/*": [
+        "lib/core-ui/addon/*"
+      ],
+      "core-ui/test-support": [
+        "lib/core-ui/addon-test-support"
+      ],
+      "core-ui/test-support/*": [
+        "lib/core-ui/addon-test-support/*"
       ]
     }
   },
   "include": [
     "app/**/*",
     "tests/**/*",
-    "types/**/*"
+    "types/**/*",
+    "lib/components",
+    "lib/core-ui"
   ]
 }

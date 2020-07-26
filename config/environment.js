@@ -17,10 +17,20 @@ module.exports = function(environment) {
         Date: false
       }
     },
-
     APP: {
-      // Here you can pass flags/options to your application instance
-      // when it is created
+      // 'ember-simple-auth-okta': {
+      //   config: {
+      //     url: 'https://dev-366498.okta.com',
+      //     issuer: 'https://dev-366498.okta.com/oauth2/default',
+      //     clientId: '0oal9xkuy7pZFHONM4x6',
+      //     redirectUri: 'http://localhost:4200/expense',
+      //     tokenManager: {
+      //       storage: 'localStorage'
+      //     }
+      //   },
+      //   headerAuthorization: 'Authorization',
+      //   idTokenScopes: ['email', 'openid']
+      // }
     }
   };
 

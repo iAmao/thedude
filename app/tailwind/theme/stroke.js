@@ -1,3 +1,3 @@
-module.exports =  {
-      current: 'currentColor',
-    }
+module.exports = (theme) => ({
+	...theme('colors'),
+});

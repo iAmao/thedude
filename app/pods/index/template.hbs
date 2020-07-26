@@ -1,0 +1,47 @@
+<div class="w-screen h-screen overflow-x-hidden md:overflow-y-hidden">
+	<nav class="w-screen h-20">
+		<div class="w-5/6 max-w-7xl m-auto flex h-full items-center justify-between">
+			<div class="w-4/5 flex items-center">
+				<img src="images/logo.svg" class="w-10 rounded-full" />&nbsp;&nbsp;<h1 class="font-fredoka text-base">TheDude</h1>
+			</div>
+			<div class="w-48 flex justify-end">
+				<LinkTo
+					@route="signin"
+					class="max-h-30 font-nunito font-semibold text-black border-solid border border-gray-900 leading-7 px-4 text-xs inline-block no-underline">
+					Log In
+				</LinkTo>
+<CoreType />
+
+				{{!-- <LinkTo @route="registq" class="max-h-30 font-nunito font-semibold bg-blue-pr text-white leading-7 px-4 text-xs inline-block no-underline">Sign Up</LinkTo> --}}
+			</div>
+		</div>
+	</nav>
+	<section class="py-20 md:py-28">
+		<div class="w-screen">
+			<div class="w-5/6 max-w-7xl m-auto block md:flex justify-between">
+				<div class="md:w-13/18 lg:w-8/18 grid md:block">
+					<p class="font-nunito text-xs lg:text-sm md:py-6 text-grey-dark text-right md:text-left">
+						<span class="text-blue-pr">100% off</span> for life!
+					</p>
+					<h1 class="font-comfortaa font-bold text-3xl lg:text-5xl leading-normal text-center md:text-left">
+						Make better plans for the things that matter the most.
+					</h1>
+					<p class="font-nunito py-6 md:py-10 leading-loose text-grey-dark text-sm lg:text-base text-center md:text-left">
+						TheDude is a 100% free productivity tool. Manage and visualize your life, time, and finances with <span class="text-blue-pr">TheDude</span>!
+					</p>
+					<div class="flex md:block justify-center">
+						<Button @route="signin" @color="primary" @size="md">Get Started <span class="opacity-50">- For Free</span></Button>
+					</div>
+				</div>
+				<div class="md:max-w-2xl overflow-x-hidden">
+					<div class="grid justify-center md:block h-64 md:h-auto overflow-y-hidden">
+						{{inline-svg
+							"undraw_personal_finance_tqcd"
+							class="transform scale-30 md:scale-50 lg:scale-70 md:-translate-x-24 lg:-translate-x-3 -translate-y-56 md:-translate-y-24"
+						}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>

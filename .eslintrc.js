@@ -12,6 +12,7 @@ module.exports = {
     'ember'
   ],
   extends: [
+    'plugin:prettier/recommended',
     'eslint:recommended',
     'plugin:ember/recommended'
   ],
