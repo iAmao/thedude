@@ -1,0 +1,12 @@
+<div
+	class="w-full flex flex-col justify-center max-w-xl h-40 bg-blue-pr overflow-hidden rounded-xl relative"
+>
+	<div class="z-1">
+		{{yield}}
+	</div>
+	{{#if @bg}}
+		<div class="absolute opacity-25 z-0">
+			<img src="../images/{{@bg}}" alt="Credit Card" class="h-40" />
+		</div>
+	{{/if}}
+</div>
