@@ -1,6 +1,8 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const Filter = require('broccoli-filter');
+
 const isProduction = EmberApp.env() === 'production';
 
 // Remove unused CSS rules
@@ -10,13 +12,13 @@ const purgeCSS = {
     content: [
       './app/index.html',
       './app/templates/**/*.hbs',
-      './app/pods/components/**/template.hbs'
+      './app/pods/components/**/template.hbs',
     ],
-    defaultExtractor: content => content.match(/[A-Za-z0-9-_:/]+/g) || []
-  }
-}
+    defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/]+/g) || [],
+  },
+};
 
-module.exports = function(defaults) {
+module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     postcssOptions: {
       compile: {
@@ -24,20 +26,36 @@ module.exports = function(defaults) {
           {
             module: require('postcss-import'),
             options: {
-              path: ['node_modules']
-            }
+              path: ['node_modules'],
+            },
           },
           require('tailwindcss')('./app/tailwind/config.js'),
-          ...isProduction ? [purgeCSS] : []
-        ]
-      }
+          ...(isProduction ? [purgeCSS] : []),
+        ],
+      },
     },
     svg: {
-      paths: [
-        'app/svgs'
-      ]
-    }
+      paths: ['app/svgs'],
+    },
   });
+
+  function MyFilter(inputNode) {
+    Filter.call(this, inputNode);
+  }
+
+  MyFilter.prototype = Object.create(Filter.prototype);
+
+  MyFilter.prototype.processString = function (existingString) {
+    var prepend = `
+      /**
+        @author Amao Inumidun
+       */
+    `;
+    return prepend + existingString;
+  };
+
+  MyFilter.prototype.extensions = ['js'];
+  MyFilter.prototype.targetExtension = 'js';
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
@@ -52,5 +70,5 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  return app.toTree();
+  return new MyFilter(app.toTree());
 };

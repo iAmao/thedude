@@ -6,6 +6,8 @@
 	"dependencies": {
 		"ember-cli-babel": "*",
 		"ember-cli-typescript": "*",
-		"ember-cli-htmlbars": "*"
+		"ember-cli-htmlbars": "*",
+		"@glimmer/component": "*",
+		"@glimmer/tracking": "*"
 	}
 }
